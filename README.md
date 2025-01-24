@@ -7,7 +7,6 @@ A simple survey application built with Ruby on Rails that allows users to create
 * Ruby 3.2
 * Rails 7.1.2
 * SQLite3
-* Node.js (for Tailwind CSS)
 
 ## Setup
 1. Install the dependencies:

@@ -1,37 +1,28 @@
 <!DOCTYPE html>
-<html class="h-full bg-gray-50">
+<html class="h-full">
   <head>
     <title>Survey Tool</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "custom", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="h-full p-4">
+  <body class="body-layout">
     <div class="min-h-full">
       <main>
-        <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+        <div class="container">
           <% if notice %>
-            <div class="rounded-md bg-green-50 p-4 mb-4">
-              <div class="flex">
-                <div class="ml-3">
-                  <p class="text-sm font-medium text-green-800"><%= notice %></p>
-                </div>
-              </div>
+            <div class="notice-message">
+              <p><%= notice %></p>
             </div>
           <% end %>
 
           <% if alert %>
-            <div class="rounded-md bg-red-50 p-4 mb-4">
-              <div class="flex">
-                <div class="ml-3">
-                  <p class="text-sm font-medium text-red-800"><%= alert %></p>
-                </div>
-              </div>
+            <div class="alert-message">
+              <p><%= alert %></p>
             </div>
           <% end %>
 

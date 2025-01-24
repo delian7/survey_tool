@@ -1,17 +1,17 @@
-<div class="mb-8">
-  <h1 class="text-2xl font-bold mb-4">Surveys</h1>
-  <%= link_to 'Create New Survey', new_survey_path, class: 'bg-blue-500 text-white px-4 py-2 rounded' %>
+<div class="survey-header">
+  <h1 class="survey-title">Surveys</h1>
+  <%= link_to 'Create New Survey', new_survey_path, class: "btn-primary" %>
 </div>
 
-<div class="grid gap-4">
+<div class="survey-grid">
   <% @surveys.each do |survey| %>
-    <div class="border p-4 rounded">
-      <h2 class="text-xl mb-2"><%= survey.question %></h2>
+    <div class="survey-card">
+      <h2 class="survey-question"><%= survey.question %></h2>
       <p>Results:</p>
       <p>Yes: <%= survey.yes_percentage %>%</p>
       <p>No: <%= survey.no_percentage %>%</p>
       <p>Total responses: <%= survey.responses.count %></p>
-      <%= link_to 'Take Survey', survey_path(survey), class: 'text-blue-500' %>
+      <%= link_to 'Take Survey', survey_path(survey), class: "link-back" %>
     </div>
   <% end %>
 </div>
