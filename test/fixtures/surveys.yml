@@ -1,0 +1,5 @@
+survey_one:
+  question: "Do you like Ruby on Rails?"
+
+survey_two:
+  question: "Is testing important?"
