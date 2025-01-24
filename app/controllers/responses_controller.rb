@@ -6,7 +6,7 @@ class ResponsesController < ApplicationController
     @response = @survey.responses.build(response_params)
 
     if @response.save
-      redirect_to survey_path(@survey), notice: 'Response was successfully recorded.'
+      redirect_to surveys_path, notice: 'Response was successfully recorded.'
     else
       redirect_to survey_path(@survey), alert: 'Error recording response.'
     end

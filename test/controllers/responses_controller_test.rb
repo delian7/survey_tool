@@ -12,7 +12,7 @@ class ResponsesControllerTest < ActionDispatch::IntegrationTest
       post survey_responses_url(@survey), params: { response: { answer: true } }
     end
 
-    assert_redirected_to survey_url(@survey)
+    assert_redirected_to surveys_url
   end
 
   test 'should not create response with invalid params' do
