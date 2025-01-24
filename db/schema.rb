@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 20_250_124_010_716) do
+ActiveRecord::Schema[7.1].define(version: 20_250_124_033_347) do
   create_table 'responses', force: :cascade do |t|
     t.integer 'survey_id', null: false
     t.boolean 'answer'
@@ -25,7 +25,17 @@ ActiveRecord::Schema[7.1].define(version: 20_250_124_010_716) do
     t.string 'question'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.integer 'user_id', default: 1, null: false
+    t.index ['user_id'], name: 'index_surveys_on_user_id'
+  end
+
+  create_table 'users', force: :cascade do |t|
+    t.string 'email'
+    t.string 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
   add_foreign_key 'responses', 'surveys'
+  add_foreign_key 'surveys', 'users'
 end

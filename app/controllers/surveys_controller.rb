@@ -11,11 +11,11 @@ class SurveysController < ApplicationController
   end
 
   def new
-    @survey = Survey.new
+    @survey = current_user.surveys.new
   end
 
   def create
-    @survey = Survey.new(survey_params)
+    @survey = current_user.surveys.new(survey_params)
     if @survey.save
       redirect_to root_path, notice: 'Survey was successfully created.'
     else

@@ -3,6 +3,7 @@
 # The Survey class represents a survey with a question and associated responses.
 # It provides methods to calculate the percentage of 'yes' and 'no' responses.
 class Survey < ApplicationRecord
+  belongs_to :user
   has_many :responses, dependent: :destroy
   validates :question, presence: true
 
