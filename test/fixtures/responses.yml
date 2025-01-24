@@ -1,0 +1,14 @@
+response_one:
+  survey: survey_one
+  answer: true
+  created_at: <%= Time.current %>
+
+response_two:
+  survey: survey_one
+  answer: false
+  created_at: <%= Time.current %>
+
+response_three:
+  survey: survey_two
+  answer: true
+  created_at: <%= Time.current %>
