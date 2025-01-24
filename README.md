@@ -1,24 +1,37 @@
-# README
+# Survey Tool
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple survey application built with Ruby on Rails that allows users to create and respond to yes/no surveys.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+* Ruby 3.2
+* Rails 7.1.2
+* SQLite3
+* Node.js (for Tailwind CSS)
 
-* System dependencies
+## Setup
+1. Install the dependencies:
 
-* Configuration
+    ```
+    bundle install
+    ```
 
-* Database creation
+2. Setup the database
+    ```
+    rails db:create
+    rails db:migrate
+    ```
 
-* Database initialization
+3. Start the Rails server:
 
-* How to run the test suite
+    ```
+    railse server
+    ```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Features
 
-* Deployment instructions
-
-* ...
+* Create yes/no surveys with single questions
+* Respond to surveys multiple times
+* View survey results with response percentages
+* Track response timestamps
+* Basic user stubbing for future authentication implementation
