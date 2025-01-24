@@ -1,0 +1,22 @@
+<div class="max-w-md mx-auto">
+  <h1 class="text-2xl font-bold mb-4"><%= @survey.question %></h1>
+
+  <%= form_with(model: [@survey, @response], local: true, class: "space-y-4") do |f| %>
+    <div class="flex space-x-4">
+      <div>
+        <%= f.radio_button :answer, true %>
+        <%= f.label :answer_true, "Yes" %>
+      </div>
+      <div>
+        <%= f.radio_button :answer, false %>
+        <%= f.label :answer_false, "No" %>
+      </div>
+    </div>
+
+    <div>
+      <%= f.submit 'Submit Response', class: "bg-blue-500 text-white px-4 py-2 rounded" %>
+    </div>
+  <% end %>
+
+  <%= link_to 'Back to Surveys', root_path, class: "text-blue-500" %>
+</div>

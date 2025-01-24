@@ -1,0 +1,27 @@
+<div class="max-w-md mx-auto">
+  <h1 class="text-2xl font-bold mb-4">New Survey</h1>
+
+  <%= form_with(model: @survey, local: true, class: "space-y-4") do |f| %>
+    <% if @survey.errors.any? %>
+      <div class="bg-red-100 p-4 rounded">
+        <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+        <ul>
+          <% @survey.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <%= f.label :question, class: "block mb-2" %>
+      <%= f.text_field :question, class: "w-full p-2 border rounded" %>
+    </div>
+
+    <div>
+      <%= f.submit 'Create Survey', class: "bg-blue-500 text-white px-4 py-2 rounded" %>
+    </div>
+  <% end %>
+
+  <%= link_to 'Back to Surveys', root_path, class: "text-blue-500" %>
+</div>
